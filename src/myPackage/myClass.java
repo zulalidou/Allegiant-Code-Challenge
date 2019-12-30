@@ -47,7 +47,7 @@ public class myClass {
 		
 		
 		WebElement departure = driver.findElement(By.name("search_form[departure_city]"));
-		departure.sendKeys(Keys.ARROW_DOWN, Keys.ENTER);	
+		departure.sendKeys(Keys.ENTER);	
 		Thread.sleep(2000);
 		
 		WebElement destination = driver.findElement(By.name("search_form[destination_city]"));
@@ -55,25 +55,21 @@ public class myClass {
 		Thread.sleep(2000);
 
 		
-		WebElement trip1 = driver.findElement(By.cssSelector("#allegiant_searchform > div:nth-child(3) > div:nth-child(1) > div > div > div > button"));
-		trip1.click();	
+		WebElement calendar1 = driver.findElement(By.cssSelector("#allegiant_searchform > div:nth-child(3) > div:nth-child(1) > div > div > div > button"));
+		calendar1.click();	
 		Thread.sleep(2000);
 		
-		WebElement date1 = driver.findElement(By.cssSelector("#ui-datepicker-0-11-30 > a"));
-		date1.click();
+		WebElement departureDate = driver.findElement(By.cssSelector("#ui-datepicker-0-5-8 > a"));
+		departureDate.click();
 		Thread.sleep(2000);
 
 		
-		WebElement trip2 = driver.findElement(By.cssSelector("#allegiant_searchform > div:nth-child(3) > div:nth-child(2) > div > div > div > button"));
-		trip2.click();	
-		Thread.sleep(2000);
-
-		WebElement nextMonth = driver.findElement(By.cssSelector("#ui-datepicker-div > div.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all > a.ui-datepicker-next.ui-corner-all > span"));
-		nextMonth.click();
+		WebElement calendar2 = driver.findElement(By.cssSelector("#allegiant_searchform > div:nth-child(3) > div:nth-child(2) > div > div > div > button"));
+		calendar2.click();	
 		Thread.sleep(2000);
 		
-		WebElement date2 = driver.findElement(By.cssSelector("#ui-datepicker-0-0-6 > a"));
-		date2.click();
+		WebElement returnDate = driver.findElement(By.cssSelector("#ui-datepicker-0-5-27 > a"));
+		returnDate.click();
 		Thread.sleep(2000);
 
 		
@@ -160,7 +156,7 @@ public class myClass {
 		System.out.println("currentBill = " + d_currentBill);
 
 		
-		assert (totalBillSoFar.equals(d_currentBill)) : "The total does NOT match the prices of all selected items";
+		assert (totalBillSoFar.equals(d_currentBill)) : "The total does NOT match the prices  of all selected items";
 		
 		System.out.println("\nThe total matches the prices of all selected items");
 	}
